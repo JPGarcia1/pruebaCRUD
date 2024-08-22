@@ -4,7 +4,8 @@
   "description": "projecto de node para probar express con mongoDB",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Jp",
   "license": "ISC",

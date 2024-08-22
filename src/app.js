@@ -15,6 +15,9 @@ mongoose.connect(process.env.DB_URL)
 app.use(express.urlencoded({ extended: false}));
 
 //configurar rutas
+app.get("/",function (req,res) {
+    res.sent("Hello from vercel");
+});
 app.use("/products", productRoutes);
 app.use("/sales", saleRoutes);
 
