@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require("cors");
 const app = express();
+
+app.use(cors());
+
 //Importar rutas
 const productRoutes = require('./routes/product.routes');
 const saleRoutes = require("./routes/sale.routes");
@@ -15,8 +19,8 @@ mongoose.connect(process.env.DB_URL)
 app.use(express.urlencoded({ extended: false}));
 
 //configurar rutas
-app.get("/",function (req,res) {
-    res.sent("Hello from vercel");
+app.get("/", function (req,res) {
+    res.send("Hello from vercel");
 });
 app.use("/products", productRoutes);
 app.use("/sales", saleRoutes);
